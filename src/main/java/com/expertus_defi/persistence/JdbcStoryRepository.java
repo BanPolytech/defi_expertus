@@ -20,7 +20,7 @@ public class JdbcStoryRepository implements StoryRepository {
     }
 
     public void save(Story story) {
-        String query = "INSERT INTO STORY (CONTENT)VALUES('" + story.getContent() + "')";
+        String query = "INSERT INTO Story (CONTENT)VALUES('" + story.getContent() + "')";
         try {
             Statement statement = connection.createStatement();
             statement.execute(query);
@@ -30,7 +30,7 @@ public class JdbcStoryRepository implements StoryRepository {
     }
 
     public List<Story> findAll() {
-        String query = "SELECT * FROM STORY";
+        String query = "SELECT * FROM Story";
         List<Story> stories = new ArrayList<>();
         try {
             Statement statement = connection.createStatement();

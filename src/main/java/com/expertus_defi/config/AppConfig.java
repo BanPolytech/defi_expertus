@@ -45,7 +45,7 @@ public class AppConfig {
     @Bean
     public DataSource dataSource() {
         return new EmbeddedDatabaseBuilder()
-                .addScripts("schema.sql")
+                //.addScripts("schema.sql")
                 .build();
     }
 }
