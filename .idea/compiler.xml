@@ -6,8 +6,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="Expertus_defi" />
+        <module name="expertus_defi" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="Expertus_defi" target="1.5" />
+    </bytecodeTargetLevel>
   </component>
 </project>
