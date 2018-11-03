@@ -1,9 +1,4 @@
-package com;
-
 import com.expertus_defi.config.AppConfig;
-import com.expertus_defi.persistence.StoryRepository;
-import com.expertus_defi.services.FeedService;
-import com.expertus_defi.services.PublicationService;
 import com.expertus_defi.services.Story;
 import com.expertus_defi.web.FeedController;
 import org.junit.Assert;
@@ -20,10 +15,6 @@ public class PublicationTest {
 
     @Before
     public void setUp(){
-        // StoryRepository storyRepository = new StoryRepository();
-        //PublicationService publicationService = new PublicationService(storyRepository);
-        //FeedService feedService = new FeedService(storyRepository);
-        //feedController = new FeedController(publicationService, feedService);
         AnnotationConfigApplicationContext container = new AnnotationConfigApplicationContext(AppConfig.class);
         feedController = container.getBean(FeedController.class);
 
