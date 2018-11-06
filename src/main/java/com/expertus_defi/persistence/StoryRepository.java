@@ -1,5 +1,6 @@
 package com.expertus_defi.persistence;
 
+import java.sql.SQLException;
 import com.expertus_defi.services.Story;
 
 import java.util.List;

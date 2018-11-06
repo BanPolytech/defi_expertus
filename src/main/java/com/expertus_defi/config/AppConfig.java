@@ -5,20 +5,25 @@ import com.expertus_defi.persistence.StoryRepository;
 import com.expertus_defi.services.FeedService;
 import com.expertus_defi.services.PublicationService;
 import com.expertus_defi.web.FeedController;
+import com.zaxxer.hikari.HikariDataSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
+import org.springframework.jdbc.core.JdbcTemplate;
 
 import javax.sql.DataSource;
-import java.sql.SQLException;
 
 @Configuration
 public class AppConfig {
 
 
     @Bean
-    public StoryRepository storyRepository(DataSource dataSource) throws SQLException {
-        return new JdbcStoryRepository(dataSource.getConnection());
+    JdbcTemplate jdbcTemplate() {
+        return new JdbcTemplate(dataSource());
+    }
+
+    @Bean
+    public StoryRepository storyRepository(JdbcTemplate jdbcTemplate) {
+        return new JdbcStoryRepository(jdbcTemplate);
     }
 
     @Bean
@@ -38,14 +43,17 @@ public class AppConfig {
     }
 
     @Bean
-    public JdbcStoryRepository jdbcStoryRepository(DataSource dataSource) throws SQLException {
-        return new JdbcStoryRepository(dataSource.getConnection());
-    }
-
-    @Bean
     public DataSource dataSource() {
-        return new EmbeddedDatabaseBuilder()
-                //.addScripts("schema.sql")
-                .build();
+        //  return new EmbeddedDatabaseBuilder()
+        //        .build();
+        String url = "jdbc:mysql://localhost:3306/defi_expertus";
+        String username = "root";
+        String password = "root";
+
+        HikariDataSource dataSource = new HikariDataSource();
+        dataSource.setJdbcUrl(url);
+        dataSource.setUsername(username);
+        dataSource.setPassword(password);
+        return dataSource;
     }
 }
