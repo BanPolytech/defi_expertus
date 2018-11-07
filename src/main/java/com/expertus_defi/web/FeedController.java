@@ -33,4 +33,9 @@ public class FeedController {
         model.addAttribute("stories", stories);
         return "feed";
     }
+
+    @RequestMapping(value = "/", method = RequestMethod.GET)
+    public String home(Model model) {
+        return "home";
+    }
 }
