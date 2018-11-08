@@ -8,6 +8,7 @@ Pour effectuer cette app, je me suis basé sur mes cours de JEE associé à Spri
 ## Pré-requis
 
 Il faut installer Maven CLI pour pouvoir "build" le projet
+Il faut aussi installer PhpMyAdmin et y créer une base de donnée vierge avec pour nom "defi_expertus", il faut que les identifiants de la PhpMyAdmin soient, id : "root", pass : "root"
 
 ## Installation
 
