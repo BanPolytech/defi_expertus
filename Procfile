@@ -1,1 +1,1 @@
-web: java -jar target/polytech-training-1.0.jar --server.port=$PORT
+web: java -jar target/defi_expertus-1.0.jar --server.port=$PORT
