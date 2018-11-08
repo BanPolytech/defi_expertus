@@ -16,7 +16,7 @@ Executez les commandes suivantes :
 
 ```
 mvn package
-java $JAVA_OPTS -jar target/expertus_defi-1.0.jar --server.port=8082
+java $JAVA_OPTS -jar target/expertus_defi-1.0-SNAPSHOT.jar --server.port=8082
 ```
 
 Ensuite ouvrez votre navigateur et l'application sera normalement lancé à l'adresse http://localhost:8082.
